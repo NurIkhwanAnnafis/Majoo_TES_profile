@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { fetchData, createData, updateData, deleteData } from '../stores/actions/app.action';
 import ModalContent from '../components/ModalContent';
 import moment from 'moment';
+import ButtonBack from '../components/Button/ButtonBack';
 
 class App extends Component {
   constructor(props){
@@ -56,13 +57,15 @@ class App extends Component {
       onSubmitContent: this.onSubmitContent,
       onDeleteContent: this.onDeleteContent
     }
-    console.log(data);
     return (
       <div className="container my-5">
         <div className="row">
-          <div className="col-md-12 text-center mb-5">
+          <div className="col-md-12 text-center mb-5 d-flex justify-content-between">
+            <ButtonBack />
             <h3 className="text-center">To do application</h3>
-            <br />
+            <div />
+          </div>
+          <div className="col-md-12 text-center mb-5">
             <button type="button" onClick={this.handleCreate}>Create To do</button>
           </div>
           <div className="col-md-6 border">
